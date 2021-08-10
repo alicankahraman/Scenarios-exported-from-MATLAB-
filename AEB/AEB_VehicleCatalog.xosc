@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<OpenSCENARIO>
+
+  <FileHeader author="The MathWorks" date="2021-08-05T10:35:33" description="Sample Scenario" revMajor="1" revMinor="0"/>
+
+  <Catalog name="AEB_VehicleCatalog">
+    <Vehicle name="Vehicle UnderTest" vehicleCategory="car">
+      <BoundingBox>
+        <Center x="11.35" y="-0.9" z="0"/>
+        <Dimensions height="1.4" length="4.7" width="1.8"/>
+      </BoundingBox>
+      <Performance maxAcceleration="5.36" maxDeceleration="6" maxSpeed="39"/>
+      <Axles>
+        <FrontAxle maxSteering="0.5" positionX="12.8" positionZ="0.1905" trackWidth="1.8" wheelDiameter="0.381"/>
+        <RearAxle maxSteering="0.5" positionX="10" positionZ="0.1905" trackWidth="1.8" wheelDiameter="0.381"/>
+      </Axles>
+      <Properties/>
+    </Vehicle>
+    <Vehicle name="Global Vehicle Target" vehicleCategory="car">
+      <BoundingBox>
+        <Center x="51.35" y="0" z="0"/>
+        <Dimensions height="1.4" length="4.7" width="1.8"/>
+      </BoundingBox>
+      <Performance maxAcceleration="5.36" maxDeceleration="6" maxSpeed="39"/>
+      <Axles>
+        <FrontAxle maxSteering="0.5" positionX="52.8" positionZ="0.1905" trackWidth="1.8" wheelDiameter="0.381"/>
+        <RearAxle maxSteering="0.5" positionX="50" positionZ="0.1905" trackWidth="1.8" wheelDiameter="0.381"/>
+      </Axles>
+      <Properties/>
+    </Vehicle>
+  </Catalog>
+
+</OpenSCENARIO>

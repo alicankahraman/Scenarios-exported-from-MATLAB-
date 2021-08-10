@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<OpenSCENARIO>
+
+  <FileHeader author="The MathWorks" date="2021-08-05T10:35:33" description="Sample Scenario" revMajor="1" revMinor="0"/>
+
+  <Catalog name="AEB_RouteCatalog">
+    <Route closed="false" name="MyRoute1">
+      <Waypoint routeStrategy="fastest">
+        <Position>
+          <WorldPosition h="0" p="0" r="0" x="10" y="-0.9" z="0"/>
+        </Position>
+      </Waypoint>
+      <Waypoint routeStrategy="fastest">
+        <Position>
+          <WorldPosition h="0" p="0" r="0" x="46" y="-0.9" z="0"/>
+        </Position>
+      </Waypoint>
+    </Route>
+  </Catalog>
+
+</OpenSCENARIO>
