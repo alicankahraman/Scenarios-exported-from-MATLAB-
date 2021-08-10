@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<OpenSCENARIO>
+
+  <FileHeader author="The MathWorks" date="2021-08-10T11:02:58" description="Sample Scenario" revMajor="1" revMinor="0"/>
+
+  <ParameterDeclarations>
+    <ParameterDeclaration name="$Car1_Speed" parameterType="double" value="50"/>
+    <ParameterDeclaration name="$Car1_InitialWaitTime" parameterType="double" value="0"/>
+    <ParameterDeclaration name="$Truck2_Speed" parameterType="double" value="40"/>
+    <ParameterDeclaration name="$Truck2_InitialWaitTime" parameterType="double" value="0"/>
+    <ParameterDeclaration name="$Car1_PositionX" parameterType="double" value="51.6099"/>
+    <ParameterDeclaration name="$Car1_PositionY" parameterType="double" value="-20.1335"/>
+    <ParameterDeclaration name="$Car1_PositionZ" parameterType="double" value="0"/>
+    <ParameterDeclaration name="$Truck2_PositionX" parameterType="double" value="59.7045"/>
+    <ParameterDeclaration name="$Truck2_PositionY" parameterType="double" value="-16.1325"/>
+    <ParameterDeclaration name="$Truck2_PositionZ" parameterType="double" value="0"/>
+  </ParameterDeclarations>
+
+  <CatalogLocations>
+    <RouteCatalog>
+      <Directory path="./"/>
+    </RouteCatalog>
+    <VehicleCatalog>
+      <Directory path="./"/>
+    </VehicleCatalog>
+  </CatalogLocations>
+
+  <RoadNetwork>
+    <LogicFile filepath="./parking_OpenDRIVE.xodr"/>
+    <SceneGraphFile filepath=""/>
+  </RoadNetwork>
+
+  <Entities>
+    <ScenarioObject name="Ego">
+      <CatalogReference catalogName="parking_VehicleCatalog" entryName=""/>
+    </ScenarioObject>
+    <ScenarioObject name="">
+      <CatalogReference catalogName="parking_VehicleCatalog" entryName=""/>
+    </ScenarioObject>
+  </Entities>
+
+  <Storyboard>
+    <Init>
+      <Actions>
+        <Private entityRef="Ego">
+          <PrivateAction>
+            <LongitudinalAction>
+              <SpeedAction>
+                <SpeedActionDynamics dynamicsDimension="time" dynamicsShape="step" value="0"/>
+                <SpeedActionTarget>
+                  <AbsoluteTargetSpeed value="$Car1_Speed"/>
+                </SpeedActionTarget>
+              </SpeedAction>
+            </LongitudinalAction>
+          </PrivateAction>
+          <PrivateAction>
+            <TeleportAction>
+              <Position>
+                <WorldPosition h="0.32969" p="0" r="0" x="$Car1_PositionX" y="$Car1_PositionY" z="$Car1_PositionZ"/>
+              </Position>
+            </TeleportAction>
+          </PrivateAction>
+          <PrivateAction>
+            <RoutingAction>
+              <AssignRouteAction>
+                <CatalogReference catalogName="parking_RouteCatalog" entryName="MyRoute1"/>
+              </AssignRouteAction>
+            </RoutingAction>
+          </PrivateAction>
+        </Private>
+        <Private entityRef="">
+          <PrivateAction>
+            <LongitudinalAction>
+              <SpeedAction>
+                <SpeedActionDynamics dynamicsDimension="time" dynamicsShape="step" value="0"/>
+                <SpeedActionTarget>
+                  <AbsoluteTargetSpeed value="$Truck2_Speed"/>
+                </SpeedActionTarget>
+              </SpeedAction>
+            </LongitudinalAction>
+          </PrivateAction>
+          <PrivateAction>
+            <TeleportAction>
+              <Position>
+                <WorldPosition h="0.4215" p="0" r="0" x="$Truck2_PositionX" y="$Truck2_PositionY" z="$Truck2_PositionZ"/>
+              </Position>
+            </TeleportAction>
+          </PrivateAction>
+          <PrivateAction>
+            <RoutingAction>
+              <AssignRouteAction>
+                <CatalogReference catalogName="parking_RouteCatalog" entryName="MyRoute2"/>
+              </AssignRouteAction>
+            </RoutingAction>
+          </PrivateAction>
+          <PrivateAction>
+            <VisibilityAction graphics="0" sensors="0" traffic="0"/>
+          </PrivateAction>
+        </Private>
+      </Actions>
+    </Init>
+    <Story name="DS_Story">
+      <Act name="DS_Act1">
+        <ManeuverGroup maximumExecutionCount="1" name="DS_ManeuverGroup_Ego_1">
+          <Actors selectTriggeringEntities="false">
+            <EntityRef entityRef="Ego"/>
+          </Actors>
+        </ManeuverGroup>
+        <ManeuverGroup maximumExecutionCount="1" name="DS_ManeuverGroup__2">
+          <Actors selectTriggeringEntities="false">
+            <EntityRef entityRef=""/>
+          </Actors>
+          <Maneuver name="DS_Maneuver_Ego_1">
+            <Event name="DS_Event_Ego1" priority="overwrite">
+              <Action name="DS_Action_Ego1">
+                <PrivateAction>
+                  <LongitudinalAction>
+                    <SpeedAction>
+                      <SpeedActionDynamics dynamicsDimension="rate" dynamicsShape="linear" value="0"/>
+                      <SpeedActionTarget>
+                        <AbsoluteTargetSpeed value="20"/>
+                      </SpeedActionTarget>
+                    </SpeedAction>
+                  </LongitudinalAction>
+                </PrivateAction>
+              </Action>
+              <StartTrigger>
+                <ConditionGroup>
+                  <Condition conditionEdge="rising" delay="0" name="DS_Cond1">
+                    <ByEntityCondition>
+                      <TriggeringEntities triggeringEntitiesRule="any">
+                        <EntityRef entityRef="Ego"/>
+                      </TriggeringEntities>
+                      <EntityCondition>
+                        <ReachPositionCondition tolerance="2.0">
+                          <Position>
+                            <WorldPosition x="-34" y="29" z="0"/>
+                          </Position>
+                        </ReachPositionCondition>
+                      </EntityCondition>
+                    </ByEntityCondition>
+                  </Condition>
+                </ConditionGroup>
+              </StartTrigger>
+            </Event>
+            <Event name="DS_Event_Ego2" priority="overwrite">
+              <Action name="DS_Action_Ego2">
+                <PrivateAction>
+                  <LongitudinalAction>
+                    <SpeedAction>
+                      <SpeedActionDynamics dynamicsDimension="rate" dynamicsShape="linear" value="0"/>
+                      <SpeedActionTarget>
+                        <AbsoluteTargetSpeed value="50"/>
+                      </SpeedActionTarget>
+                    </SpeedAction>
+                  </LongitudinalAction>
+                </PrivateAction>
+              </Action>
+              <StartTrigger>
+                <ConditionGroup>
+                  <Condition conditionEdge="rising" delay="0" name="DS_Cond2">
+                    <ByEntityCondition>
+                      <TriggeringEntities triggeringEntitiesRule="any">
+                        <EntityRef entityRef="Ego"/>
+                      </TriggeringEntities>
+                      <EntityCondition>
+                        <ReachPositionCondition tolerance="2.0">
+                          <Position>
+                            <WorldPosition x="38" y="-24" z="0"/>
+                          </Position>
+                        </ReachPositionCondition>
+                      </EntityCondition>
+                    </ByEntityCondition>
+                  </Condition>
+                  <Condition conditionEdge="rising" delay="0" name="AfterDS_Action_Ego1">
+                    <ByValueCondition>
+                      <StoryboardElementStateCondition state="completeState" storyboardElementRef="DS_Action_Ego1" storyboardElementType="action"/>
+                    </ByValueCondition>
+                  </Condition>
+                </ConditionGroup>
+              </StartTrigger>
+            </Event>
+            <Event name="DS_ActorSpawningEntryEvent__1" priority="overwrite">
+              <Action name="DS_ActorSpawningAction__1">
+                <PrivateAction>
+                  <VisibilityAction graphics="true" sensors="true" traffic="true"/>
+                </PrivateAction>
+              </Action>
+              <StartTrigger>
+                <ConditionGroup>
+                  <Condition conditionEdge="none" delay="0" name="ActorSpawningStartTrigger_1">
+                    <ByValueCondition>
+                      <SimulationTimeCondition rule="greaterThan" value="3"/>
+                    </ByValueCondition>
+                  </Condition>
+                </ConditionGroup>
+              </StartTrigger>
+            </Event>
+          </Maneuver>
+        </ManeuverGroup>
+        <StartTrigger>
+          <ConditionGroup>
+            <Condition conditionEdge="rising" delay="0" name="">
+              <ByValueCondition>
+                <SimulationTimeCondition rule="greaterThan" value="0"/>
+              </ByValueCondition>
+            </Condition>
+          </ConditionGroup>
+        </StartTrigger>
+      </Act>
+    </Story>
+    <StopTrigger/>
+  </Storyboard>
+
+</OpenSCENARIO>

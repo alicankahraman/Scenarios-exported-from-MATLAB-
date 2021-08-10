@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<OpenSCENARIO>
+
+  <FileHeader author="The MathWorks" date="2021-08-10T11:02:58" description="Sample Scenario" revMajor="1" revMinor="0"/>
+
+  <Catalog name="parking_RouteCatalog">
+    <Route closed="false" name="MyRoute1">
+      <Waypoint routeStrategy="fastest">
+        <Position>
+          <WorldPosition h="-0.19016" p="0" r="0" x="-80" y="43" z="0"/>
+        </Position>
+      </Waypoint>
+      <Waypoint routeStrategy="fastest">
+        <Position>
+          <WorldPosition h="-0.50627" p="0" r="0" x="-34" y="29" z="0"/>
+        </Position>
+      </Waypoint>
+      <Waypoint routeStrategy="fastest">
+        <Position>
+          <WorldPosition h="-1.0038" p="0" r="0" x="-18" y="15" z="0"/>
+        </Position>
+      </Waypoint>
+      <Waypoint routeStrategy="fastest">
+        <Position>
+          <WorldPosition h="-1.0728" p="0" r="0" x="-10" y="-2" z="0"/>
+        </Position>
+      </Waypoint>
+      <Waypoint routeStrategy="fastest">
+        <Position>
+          <WorldPosition h="-0.58253" p="0" r="0" x="4" y="-17" z="0"/>
+        </Position>
+      </Waypoint>
+      <Waypoint routeStrategy="fastest">
+        <Position>
+          <WorldPosition h="0.17524" p="0" r="0" x="38" y="-24" z="0"/>
+        </Position>
+      </Waypoint>
+      <Waypoint routeStrategy="fastest">
+        <Position>
+          <WorldPosition h="0.32982" p="0" r="0" x="52" y="-20" z="0"/>
+        </Position>
+      </Waypoint>
+    </Route>
+    <Route closed="false" name="MyRoute2">
+      <Waypoint routeStrategy="fastest">
+        <Position>
+          <WorldPosition h="-0.49979" p="0" r="0" x="4" y="-17" z="0"/>
+        </Position>
+      </Waypoint>
+      <Waypoint routeStrategy="fastest">
+        <Position>
+          <WorldPosition h="-0.23751" p="0" r="0" x="20" y="-24" z="0"/>
+        </Position>
+      </Waypoint>
+      <Waypoint routeStrategy="fastest">
+        <Position>
+          <WorldPosition h="0.20314" p="0" r="0" x="38" y="-24" z="0"/>
+        </Position>
+      </Waypoint>
+      <Waypoint routeStrategy="fastest">
+        <Position>
+          <WorldPosition h="0.42154" p="0" r="0" x="60" y="-16" z="0"/>
+        </Position>
+      </Waypoint>
+    </Route>
+  </Catalog>
+
+</OpenSCENARIO>

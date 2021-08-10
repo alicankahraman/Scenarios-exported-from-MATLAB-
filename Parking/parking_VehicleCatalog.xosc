@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<OpenSCENARIO>
+
+  <FileHeader author="The MathWorks" date="2021-08-10T11:02:58" description="Sample Scenario" revMajor="1" revMinor="0"/>
+
+  <Catalog name="parking_VehicleCatalog">
+    <Vehicle name="" vehicleCategory="car">
+      <BoundingBox>
+        <Center x="52.9599" y="-20.1335" z="0"/>
+        <Dimensions height="1.4" length="4.7" width="1.8"/>
+      </BoundingBox>
+      <Performance maxAcceleration="5.36" maxDeceleration="6" maxSpeed="39"/>
+      <Axles>
+        <FrontAxle maxSteering="0.5" positionX="54.4099" positionZ="0.1905" trackWidth="1.8" wheelDiameter="0.381"/>
+        <RearAxle maxSteering="0.5" positionX="51.6099" positionZ="0.1905" trackWidth="1.8" wheelDiameter="0.381"/>
+      </Axles>
+      <Properties/>
+    </Vehicle>
+    <Vehicle name="" vehicleCategory="truck">
+      <BoundingBox>
+        <Center x="61.0545" y="-16.1325" z="0"/>
+        <Dimensions height="1.4" length="4.7" width="1.8"/>
+      </BoundingBox>
+      <Performance maxAcceleration="0.897" maxDeceleration="0.474" maxSpeed="30"/>
+      <Axles>
+        <FrontAxle maxSteering="0.5" positionX="62.5045" positionZ="0.28575" trackWidth="1.8" wheelDiameter="0.5715"/>
+        <RearAxle maxSteering="0.5" positionX="59.7045" positionZ="0.28575" trackWidth="1.8" wheelDiameter="0.5715"/>
+      </Axles>
+      <Properties/>
+    </Vehicle>
+  </Catalog>
+
+</OpenSCENARIO>
